@@ -1,11 +1,15 @@
 import styled from 'styled-components';
-import ScreenMainContent from '../app.feature/main/ScreenMainContent';
+import { GlobalStyle } from '../GlobalStyle';
+import ScreenSplashContent from './splash';
 
 export const App = () => {
   return (
-    <StyledWrapper>
-      <ScreenMainContent />
-    </StyledWrapper>
+    <>
+      <GlobalStyle />
+      <StyledWrapper>
+        <ScreenSplashContent />
+      </StyledWrapper>
+    </>
   );
 };
 
