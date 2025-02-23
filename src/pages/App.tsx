@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { GlobalStyle } from '../GlobalStyle';
-import ScreenSplashContent from './splash';
+import ScreenSplashContent from './splash/Splash';
 
 export const App = () => {
   return (
