@@ -2,7 +2,7 @@ import { useRouter } from 'next/router';
 import { useEffect } from 'react';
 import styled, { keyframes } from 'styled-components';
 
-const ScreenSplashContent = () => {
+const ScreenSplashContent: React.FC = () => {
   const router = useRouter();
 
   useEffect(() => {
