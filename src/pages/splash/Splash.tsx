@@ -5,19 +5,20 @@ import styled, { keyframes } from 'styled-components';
 const ScreenSplashContent = () => {
   const router = useRouter();
 
-  // useEffect(() => {
-  //   const timer = setTimeout(() => {
-  //     router.push('/quiz/main');
-  //   }, 2000);
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      router.push('/quiz/main');
+    }, 3000);
 
-  //   return () => clearTimeout(timer);
-  // }, []);
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <StyledWrapper>
-      <h1>👰유나&희도🤵</h1>
-      {/* TODO : 이미지는 누나가 준 걸로 다시 수정 예정 */}
-      <img src="/images/thumbnail_image.png" alt="image_of_splash" />
+      <div>
+        <h1>유나&희도</h1>
+        <span>"퀴즈로 함께하는 특별한 순간"</span>
+      </div>
     </StyledWrapper>
   );
 };
@@ -34,28 +35,40 @@ const fadeIn = keyframes`
 `;
 
 const StyledWrapper = styled.div`
-  width: 100%;
+  width: 100vw;
   height: 100vh;
+  background-image: url('/images/Splash_image.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 
-  position: relative;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
 
-  > h1 {
-    position: absolute;
-    z-index: 99;
-    top: 30%;
+  animation: ${fadeIn} 2s forwards;
 
+  div {
+    @font-face {
+      font-family: 'GabiaBombaram';
+      src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/GabiaBombaram.woff')
+        format('woff');
+      font-weight: normal;
+      font-style: normal;
+    }
+    font-family: 'GabiaBombaram', sans-serif;
+
+    margin-top: 450px;
+    text-align: center;
     color: #ebe7e5;
-  }
 
-  > img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
+    > h1 {
+      font-size: 40px;
+      margin-bottom: 10px;
+    }
 
-    animation: ${fadeIn} 2s forwards;
+    > span {
+      font-size: 30px;
+    }
   }
 `;
