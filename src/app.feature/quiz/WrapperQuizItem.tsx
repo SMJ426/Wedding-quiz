@@ -1,25 +1,27 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
-import ProgressBarSection from './ProgressBarSection';
-import QuizQuestion from './QuizQuestion';
-import AnswerOptionsWrapper from './AnswerOptionsWrapper';
-import { quizData } from '../../data/quizData';
+import QuizResults from './QuizResults';
+import QuizCard from './QuizCard';
+import { QuizItem } from '../../data/quizType';
 
-const WrapperQuizItem: React.FC = ({}) => {
+type Props = {
+  quizData: QuizItem;
+  quizCompleted: boolean;
+  currentQuestion: number;
+};
+
+const WrapperQuizItem: React.FC<Props> = ({
+  quizData,
+  quizCompleted,
+  currentQuestion,
+}) => {
   return (
     <StyledWrapper>
-      {quizData.map((quizDataItem, index) => {
-        return (
-          <>
-            <ProgressBarSection quizNumber={index + 1} />
-            <QuizQuestion questionsData={quizDataItem.question} />
-            <AnswerOptionsWrapper
-              optionsData={quizDataItem.options}
-              answersData={quizDataItem.answer}
-            />
-          </>
-        );
-      })}
+      {quizCompleted ? (
+        <QuizResults />
+      ) : (
+        <QuizCard quizData={quizData} currentQuestion={currentQuestion} />
+      )}
     </StyledWrapper>
   );
 };

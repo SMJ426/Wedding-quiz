@@ -1,13 +1,30 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import NextQuestionButton from '../../app.feature/quiz/NextQuestionButton';
 import WrapperQuizItem from '../../app.feature/quiz/WrapperQuizItem';
+import { quizData } from '../../data/quizData';
 
 const ScreenQuizMain: React.FC = () => {
+  const [currentQuestion, setCurrentQuestion] = useState(0);
+  const [quizCompleted, setQuizCompleted] = useState(false);
+  const totalQuizCount = quizData.length;
+
+  const handleNextQuestionClick = () => {
+    if (currentQuestion < totalQuizCount - 1) {
+      setCurrentQuestion(currentQuestion + 1);
+    } else {
+      setQuizCompleted(true);
+    }
+  };
+
   return (
     <StyledWrapper>
-      <WrapperQuizItem />
-      <NextQuestionButton />
+      <WrapperQuizItem
+        quizData={quizData[currentQuestion]}
+        quizCompleted={quizCompleted}
+        currentQuestion={currentQuestion}
+      />
+      <NextQuestionButton onNextQuestionClick={handleNextQuestionClick} />
     </StyledWrapper>
   );
 };

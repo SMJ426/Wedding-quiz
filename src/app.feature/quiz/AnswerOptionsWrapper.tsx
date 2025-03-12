@@ -15,7 +15,7 @@ const AnswerOptionsWrapper: React.FC<Props> = ({
     <StyledWrapper>
       {optionsData.map((option, index) => {
         return (
-          <div className="wrapper-items">
+          <div className="wrapper-items" key={index}>
             <span>{index + 1}</span>
             <div>{option}</div>
           </div>

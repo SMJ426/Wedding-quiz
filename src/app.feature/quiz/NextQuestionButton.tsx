@@ -1,8 +1,16 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const NextQuestionButton: React.FC = ({}) => {
-  return <StyledWrapper>NextQuestionButton</StyledWrapper>;
+type Props = {
+  onNextQuestionClick: () => void;
+};
+
+const NextQuestionButton: React.FC<Props> = ({ onNextQuestionClick }) => {
+  return (
+    <StyledWrapper onClick={onNextQuestionClick}>
+      NextQuestionButton
+    </StyledWrapper>
+  );
 };
 
 export default NextQuestionButton;
