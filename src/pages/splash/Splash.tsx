@@ -7,8 +7,8 @@ const ScreenSplashContent: React.FC = () => {
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      router.push('/quiz/main');
-    }, 3000);
+      router.push('/quiz/explanation');
+    }, 3500);
 
     return () => clearTimeout(timer);
   }, []);
@@ -49,15 +49,6 @@ const StyledWrapper = styled.div`
   animation: ${fadeIn} 2s forwards;
 
   div {
-    @font-face {
-      font-family: 'GabiaBombaram';
-      src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/GabiaBombaram.woff')
-        format('woff');
-      font-weight: normal;
-      font-style: normal;
-    }
-    font-family: 'GabiaBombaram', sans-serif;
-
     margin-top: 450px;
     text-align: center;
     color: #ebe7e5;

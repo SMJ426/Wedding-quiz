@@ -10,7 +10,7 @@ export const GlobalStyle = createGlobalStyle`
   html, body {
     width: 100%;
     height: 100%;
-    font-family: 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
+    font-family: 'GowunDodum-Regular', 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
     background-color: #f9f9f9;
     color: #333;
     -webkit-tap-highlight-color: transparent;
@@ -24,5 +24,13 @@ export const GlobalStyle = createGlobalStyle`
   a {
     text-decoration: none;
     color: inherit;
+  }
+
+  @font-face {
+    font-family: 'GowunDodum-Regular';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/GowunDodum-Regular.woff')
+      format('woff');
+    font-weight: normal;
+    font-style: normal;
   }
 `;
