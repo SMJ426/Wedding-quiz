@@ -5,8 +5,8 @@ import WrapperQuizItem from '../../app.feature/quiz/WrapperQuizItem';
 import { quizData } from '../../data/quizData';
 
 const ScreenQuizMain: React.FC = () => {
-  const [currentQuestion, setCurrentQuestion] = useState(0);
-  const [quizCompleted, setQuizCompleted] = useState(false);
+  const [currentQuestion, setCurrentQuestion] = useState<number>(0);
+  const [quizCompleted, setQuizCompleted] = useState<boolean>(false);
   const totalQuizCount = quizData.length;
 
   const handleNextQuestionClick = () => {
