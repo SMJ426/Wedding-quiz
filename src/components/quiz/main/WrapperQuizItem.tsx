@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import QuizResults from './QuizResults';
-import QuizCard from './QuizCard';
-import { QuizItem } from '../../data/quizType';
+import { QuizItem } from '../../../data/quizType';
+import QuizResults from '../QuizResults';
+import QuizCard from '../QuizCard';
 
 type Props = {
   quizData: QuizItem;

@@ -1,8 +1,10 @@
+'use client';
+
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import NextQuestionButton from '../../app.feature/quiz/NextQuestionButton';
-import WrapperQuizItem from '../../app.feature/quiz/WrapperQuizItem';
-import { quizData } from '../../data/quizData';
+import { quizData } from '../../../data/quizData';
+import WrapperQuizItem from '../../../components/quiz/main/WrapperQuizItem';
+import NextQuestionButton from '../../../components/quiz/main/NextQuestionButton';
 
 const ScreenQuizMain: React.FC = () => {
   const [currentQuestion, setCurrentQuestion] = useState<number>(0);
